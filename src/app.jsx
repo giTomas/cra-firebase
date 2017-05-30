@@ -51,7 +51,7 @@ class App extends React.Component {
   }
 
   handleChange = (e) => {
-      this.setState({text: e.target.value})
+    this.setState({text: e.target.value})
   };
 
   pushToFirebase = (e) => {
@@ -66,7 +66,7 @@ class App extends React.Component {
     const records = items.map((item) => <li key={item._key}>{item.text}</li>);
     return (
       <div>
-         <input onChange={this.handleChange} />
+         <input value={this.state.text} onChange={this.handleChange} />
          <button onClick={this.pushToFirebase}>Push to Firebase</button>
          <ul>
            {records || <p>Loading...</p>}
